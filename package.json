@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "tsc",
     "start": "node dist/index.js",
-    "lint": "eslint src/**/* --fix",
+    "lint": "eslint src/**/* --max-warnings 0 --fix",
     "test": "yarn lint && jest --coverage",
     "watch": "jest --watch --notify"
   },
@@ -41,6 +41,18 @@
       ]
     }
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --max-warnings 0 --fix",
+      "jest --bail --coverage --findRelatedTests",
+      "git add"
+    ]
+  },
   "author": "Nick Meldrum <nick@nickmeldrum.com> (https://nickmeldrum.com)",
   "license": "ISC",
   "dependencies": {},
@@ -50,7 +62,9 @@
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
     "eslint": "^5.16.0",
+    "husky": "^1.3.1",
     "jest": "^24.7.1",
+    "lint-staged": "^8.1.5",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.4"
   }
