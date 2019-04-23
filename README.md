@@ -11,8 +11,10 @@ An example project to show how to setup a node/ typescript project. Requirements
 
 ## Conventions/ tools adopted
 
- * uses eslint for linting/ typechecking
+ * uses eslint for linting
+ * uses prettier for formatting
  * uses jest for testing/ watching and code coverage
+ * uses husky and lint-staged to lint/ type check (compile) and test changes
 
 ## Prerequisites
 
@@ -24,10 +26,3 @@ An example project to show how to setup a node/ typescript project. Requirements
  * `yarn test` to lint and run the unit tests
  * `yarn watch` to run the unit tests in watch mode (with mac notifications turned on)
  * `yarn start` to run the program in node
-
-## TODO
-
- * husky/lint-staged setup
- * is typechecking happening during linting? what is the best practice here?
- * prettier integration?
- * FUTURE: integrate with our npm/package/seed project?
