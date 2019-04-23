@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
+    "types": ["node", "jest"],
     "outDir": "dist/"
   },
   "include": ["src/**/*"],
-  "exclude": ["**/*/*.spec.ts", "**/*/*.test.ts"]
+  "exclude": ["**/*/*.spec.ts", "**/*/*.test.ts", "node_modules"]
 }
