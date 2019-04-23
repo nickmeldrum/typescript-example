@@ -9,6 +9,11 @@ An example project to show how to setup a node/ typescript project. Requirements
  * good unit test integration with code coverage
  * sensible and transparent compilation setup
 
+## Conventions/ tools adopted
+
+ * uses eslint for linting/ typechecking
+ * uses jest for testing/ watching and code coverage
+
 ## Prerequisites
 
  * git, node and yarn
