@@ -6,8 +6,9 @@
   "scripts": {
     "prestart": "tsc",
     "start": "node dist/index.js",
-    "test": "jest --coverage",
-    "watch": "yarn test --watch --notify"
+    "lint": "eslint src --fix",
+    "test": "yarn lint && jest --coverage",
+    "watch": "jest --watch --notify"
   },
   "jest": {
     "roots": [
@@ -21,11 +22,28 @@
     ],
     "coverageDirectory": "coverage"
   },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules":  {
+      "indent": "off",
+      "@typescript-eslint/indent": [ "error", 2 ]
+    }
+  },
   "author": "Nick Meldrum <nick@nickmeldrum.com> (https://nickmeldrum.com)",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^24.0.11",
+    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/parser": "^1.7.0",
+    "eslint": "^5.16.0",
     "jest": "^24.7.1",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.4"
