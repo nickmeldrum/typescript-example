@@ -1,3 +1,9 @@
 import display from './product-display'
 
-console.log(display)
+const run = (): void => {
+  console.log(display)
+}
+
+run()
+
+export default run
